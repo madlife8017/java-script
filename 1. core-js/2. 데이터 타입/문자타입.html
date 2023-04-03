@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">Home</a>
+        </li>
+    </ul>
+    <script>
+        var greetings;
+        greetings ="안녕하세요!";
+        greetings ='하이';//주로 이걸 사용
+
+        var ex_str = '그는 나에게 "위험해!" 라고 말했다.'
+        //백틱으로 감싼 문자열을 공백 들여쓰기 모두 인정
+        temp =` <ul>
+        <li>
+            <a href="#">Home</a>
+        </li>
+    </ul>`;
+
+        console.log(temp);
+        console.log('-----------------------------');
+
+        var month = 12;
+        var day = 25;
+        var anni = '크리스마스';
+
+        console.log(month+'월'+day+'일은'+anni+'입니다.');
+
+        //2016년 이후 문법
+        console.log(`${month}월 ${day}일은 ${anni}입니다.`);
+
+
+    </script>
+    
+</body>
+</html>
