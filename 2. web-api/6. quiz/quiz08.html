@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>할일 목록 만들기</h2>
+
+    <div class="name-form">
+        <h3 class="name-title">
+            <input type="text" placeholder="이름을 입력하세요" class="name-input">
+            <button class="btn1">확인</button>
+        </h3>
+    </div>
+
+    <div class="todo-form">
+        <input type="text" placeholder="당신의 할일을 적을세요." class="todo-input">
+        <button class="btn2">확인</button>
+    </div>
+
+    <ul class="todo-list">
+
+    </ul>
+
+    <script>
+        $n = document.querySelector('.name-form');
+        $name = document.querySelector('.name-form> .name-title');
+        $nameform = document.querySelector('.name-form> .name-title> .name-input');
+        $todo = document.querySelector('.todo-form> .todo-input');
+        $list = document.querySelector('.todo-list');
+        $btn1 = document.querySelector('.btn1');
+        $btn2 = document.querySelector('.btn2');
+
+
+        $btn1.onclick = function () {
+            $nameform.classList.add('hidden');
+            $btn1.classList.add('hidden');
+            $name.textContent = $nameform.value + '님 안녕하세요';
+        }
+
+        $btn2.onclick = function (e) {
+            const $newli = document.createElement('li');
+            const $x = document.createElement('button');
+            $x.textContent = 'X';
+            $newli.textContent = $todo.value;
+            if ($newli.textContent === '') {
+                alert('할일을 입력하세요!');
+            } else {
+                $newli.appendChild($x);
+                $list.appendChild($newli);
+            }
+            $x.onclick = function () {$list.removeChild($newli);}
+        }
+    </script>
+</body>
+
+</html>

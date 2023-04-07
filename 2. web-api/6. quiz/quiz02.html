@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>자바스크립트 카운트</h2>
+    <input type="text" id="result" value="0" readonly>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    
+    <script>
+        
+        const $plus = document.getElementById('plus');
+        const $minus = document.getElementById('minus');
+        const $result = document.getElementById('result');
+            
+        
+        $plus.onclick = function(){
+            $result.value++; 
+               
+        }
+        $minus.onclick = function(){
+            if(+$result.value ===1){
+                alert('0 미만으로 내릴 수 없습니다.');
+                return;
+            }
+            $result.value--;          
+        }
+
+    </script>
+    
+</body>
+</html>
